@@ -1,6 +1,6 @@
 package com.omarsanchez;
 
-public class Rectangle {
+public class Rectangle implements ArithmeticOperator {
     private int base;
     private int height;
 
@@ -17,23 +17,20 @@ public class Rectangle {
         return height;
     }
 
-    ///////////////////////////
-    public double getArea() {
-        return base * height;
-    }
-
-    public double getPerimeter() {
-        return (base + height) * 2;
-    }
-    //////////////////////////
-
-    public void printData(){
+    public void printData() {
         Utils.printLn("Hola soy un rectangulo");
         Utils.printLn("mi base es de " + getBase());
         Utils.printLn("mi altura de " + getHeight());
-        Utils.printLn("mi perimetro es de " + getPerimeter());
-        Utils.printLn("mi area es de " + getArea());
         Utils.skipLine();
     }
 
+    @Override
+    public double calcPerimeter() {
+        return base * height;
+    }
+
+    @Override
+    public double calcArea() {
+        return (base + height) * 2;
+    }
 }
