@@ -12,4 +12,12 @@ public class Utils {
     public static void skipLine() {
         System.out.println();
     }
+
+    public static void printLn(int text){
+        System.out.println(String.valueOf(text));
+    }
+
+    public static void printLn(Double text){
+        System.out.println(String.valueOf(text));
+    }
 }

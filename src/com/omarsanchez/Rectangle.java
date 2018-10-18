@@ -17,6 +17,7 @@ public class Rectangle {
         return height;
     }
 
+    ///////////////////////////
     public double getArea() {
         return base * height;
     }
@@ -24,6 +25,7 @@ public class Rectangle {
     public double getPerimeter() {
         return (base + height) * 2;
     }
+    //////////////////////////
 
     public void printData(){
         Utils.printLn("Hola soy un rectangulo");

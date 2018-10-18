@@ -18,7 +18,10 @@ public class Main {
             perimeter += rectangle.getPerimeter();
             area += rectangle.getArea();
         }
-
+        Utils.print("La suma de areas es ");
+        Utils.printLn(area);
+        Utils.print("La suma de perimetros es ");
+        Utils.printLn(perimeter);
 
     }
 }
