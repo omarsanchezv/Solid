@@ -2,34 +2,36 @@ package com.omarsanchez;
 
 public class Rectangle {
     private int base;
-    private int hight;
+    private int height;
 
-    public Rectangle(int base, int hight) {
+    public Rectangle(int base, int height) {
         this.base = base;
-        this.hight = hight;
+        this.height = height;
     }
 
     public int getBase() {
         return base;
     }
 
-    public void setBase(int base) {
-        this.base = base;
-    }
-
-    public int getHight() {
-        return hight;
-    }
-
-    public void setHight(int hight) {
-        this.hight = hight;
+    public int getHeight() {
+        return height;
     }
 
     public double getArea() {
-        return base * hight;
+        return base * height;
     }
 
     public double getPerimeter() {
-        return (base + hight) * 2;
+        return (base + height) * 2;
     }
+
+    public void printData(){
+        Utils.printLn("Hola soy un rectangulo");
+        Utils.printLn("mi base es de " + getBase());
+        Utils.printLn("mi altura de " + getHeight());
+        Utils.printLn("mi perimetro es de " + getPerimeter());
+        Utils.printLn("mi area es de " + getArea());
+        Utils.skipLine();
+    }
+
 }
