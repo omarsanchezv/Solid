@@ -1,4 +1,4 @@
-package com.omarsanchez;
+package com.omarsanchez.Data;
 
 import com.omarsanchez.Figuras.tipos.Circle;
 import com.omarsanchez.Figuras.Figure;
