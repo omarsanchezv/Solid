@@ -1,9 +1,8 @@
 package com.omarsanchez.Figuras;
 
-import com.omarsanchez.ArithmeticOperator;
 import com.omarsanchez.Utils;
 
-public class Triangle implements ArithmeticOperator {
+public class Triangle extends Figure {
     private int base;
     private int aSide;
     private int bSide;
@@ -14,13 +13,6 @@ public class Triangle implements ArithmeticOperator {
         this.height = height;
         this.aSide = aSide;
         this.bSide = bSide;
-    }
-
-
-    public void printDataTriangulo() {
-        Utils.printLn("Hola soy un triangulo");
-        Utils.printLn("Soy del tipo " + getTipe());
-        Utils.skipLine();
     }
 
     private String getTipe(){
@@ -41,5 +33,12 @@ public class Triangle implements ArithmeticOperator {
     @Override
     public double calcArea() {
         return (base + height) * 2;
+    }
+
+    @Override
+    void print() {
+        Utils.printLn("Hola soy un triangulo");
+        Utils.printLn("Soy del tipo " + getTipe());
+        Utils.skipLine();
     }
 }
