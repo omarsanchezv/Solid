@@ -11,9 +11,9 @@ public class Circle extends Figure {
     }
 
     @Override
-    void print() {
-        Utils.print("Hola soy un circulo");
-        Utils.print("Con un radio de " + radio);
+    public void print() {
+        Utils.printLn("Hola soy un circulo");
+        Utils.printLn("Con un radio de " + radio);
         Utils.skipLine();
     }
 

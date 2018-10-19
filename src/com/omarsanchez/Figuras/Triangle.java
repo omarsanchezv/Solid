@@ -15,12 +15,12 @@ public class Triangle extends Figure {
         this.bSide = bSide;
     }
 
-    private String getTipe(){
-        if (base == aSide && aSide == bSide){
+    private String getTipe() {
+        if (base == aSide && aSide == bSide) {
             return "Equilatero";
-        }else if (base == aSide || base == bSide || aSide == bSide){
+        } else if (base == aSide || base == bSide || aSide == bSide) {
             return "Isoceles";
-        }else {
+        } else {
             return "Escaleno";
         }
     }
@@ -36,7 +36,7 @@ public class Triangle extends Figure {
     }
 
     @Override
-    void print() {
+    public void print() {
         Utils.printLn("Hola soy un triangulo");
         Utils.printLn("Soy del tipo " + getTipe());
         Utils.skipLine();

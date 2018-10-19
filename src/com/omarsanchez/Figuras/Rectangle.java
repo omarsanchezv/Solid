@@ -30,7 +30,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    void print() {
+    public void print() {
         Utils.printLn("Hola soy un rectangulo");
         Utils.printLn("mi base es de " + getBase());
         Utils.printLn("mi altura de " + getHeight());
