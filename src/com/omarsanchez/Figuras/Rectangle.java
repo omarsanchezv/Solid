@@ -1,4 +1,7 @@
-package com.omarsanchez;
+package com.omarsanchez.Figuras;
+
+import com.omarsanchez.ArithmeticOperator;
+import com.omarsanchez.Utils;
 
 public class Rectangle implements ArithmeticOperator {
     private int base;
@@ -26,11 +29,11 @@ public class Rectangle implements ArithmeticOperator {
 
     @Override
     public double calcPerimeter() {
-        return base * height;
+        return (base + height) * 2;
     }
 
     @Override
     public double calcArea() {
-        return (base + height) * 2;
+        return base * height;
     }
 }
