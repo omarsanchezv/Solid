@@ -1,13 +1,19 @@
 package com.omarsanchez;
 
-import com.omarsanchez.Figuras.Circle;
+import com.omarsanchez.Figuras.tipos.Circle;
 import com.omarsanchez.Figuras.Figure;
-import com.omarsanchez.Figuras.Rectangle;
-import com.omarsanchez.Figuras.Triangle;
+import com.omarsanchez.Figuras.tipos.Rectangle;
+import com.omarsanchez.Figuras.tipos.Triangle;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Init {
-    public Init() {
-        Figure[] figures = {
+    private ArrayList<? extends Figure> figures;
+    private static Init init;
+    private Init() {
+        //in order to Test we are going to create a new array
+        figures = new ArrayList<Figure>(Arrays.asList(
                 new Rectangle(4, 2),
                 new Rectangle(6, 3),
                 new Rectangle(4, 3),
@@ -19,20 +25,25 @@ public class Init {
                 new Triangle(4, 4, 4, 2),
                 new Circle(4),
                 new Circle(3),
-                new Circle(6)
-        };
+                new Circle(6)));
 
-        double area = 0, perimeter = 0;
+//        figures = new ArrayList<Rectangle>(Arrays.asList(
+//                new Rectangle(4, 2),
+//                new Rectangle(6, 3),
+//                new Rectangle(4, 3),
+//                new Rectangle(9, 4),
+//                new Rectangle(4, 1),
+//                new Rectangle(2, 3)));
+    }
 
-        for (Figure figure : figures){
-            figure.print();
-            area += figure.calcArea();
-            perimeter += figure.calcPerimeter();
+    public static Init getInstance(){
+        if(init == null){
+            init = new Init();
         }
+        return init;
+    }
 
-        Utils.print("La suma de areas es ");
-        Utils.printLn(area);
-        Utils.print("La suma de perimetros es ");
-        Utils.printLn(perimeter);
+    public ArrayList<? extends Figure> getFigures() {
+        return figures;
     }
 }

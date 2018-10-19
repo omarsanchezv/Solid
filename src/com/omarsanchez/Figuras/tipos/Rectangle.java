@@ -1,5 +1,6 @@
-package com.omarsanchez.Figuras;
+package com.omarsanchez.Figuras.tipos;
 
+import com.omarsanchez.Figuras.Figure;
 import com.omarsanchez.Utils;
 
 public class Rectangle extends Figure {
