@@ -3,21 +3,15 @@ package com.omarsanchez.Data;
 import com.omarsanchez.Data.interfaces.DataFetcher;
 import com.omarsanchez.Data.interfaces.DataFromLocal;
 import com.omarsanchez.Data.interfaces.DataFromWeb;
+import com.omarsanchez.Data.interfaces.OnDataReady;
 import com.omarsanchez.Figuras.Figure;
 import com.omarsanchez.Utils;
 
 import java.util.ArrayList;
 
-public class DataManagerComplete implements Data, DataFromLocal, DataFromWeb, DataFetcher {
+class DataManagerComplete extends Data implements DataFromLocal, DataFromWeb, DataFetcher {
     static Data data;
     ArrayList<? extends Figure> FigureData;
-
-    public static Data getInstance(){
-        if (data == null){
-            data = new DataManagerComplete();
-        }
-        return data;
-    }
 
     @Override
     public void saveData(ArrayList<? extends Figure> data) {
@@ -42,9 +36,18 @@ public class DataManagerComplete implements Data, DataFromLocal, DataFromWeb, Da
     }
 
     @Override
-    public ArrayList<? extends Figure> getFigureData() {
+    public void getData() {
         FigureData = getDataFromWeb();
         saveData(FigureData);
-        return getDataFromLocal();
+        dataReady.onComplete(getDataFromLocal());
+    }
+
+    @Override
+    public Data getInstance(OnDataReady dataReady) {
+        if (data == null) {
+            data = new DataManagerComplete();
+        }
+        data.dataReady = dataReady;
+        return data;
     }
 }

@@ -1,31 +1,30 @@
 package com.omarsanchez.Data;
 
 import com.omarsanchez.Data.interfaces.DataFromLocal;
+import com.omarsanchez.Data.interfaces.OnDataReady;
 import com.omarsanchez.Figuras.Figure;
 
 import java.util.ArrayList;
 
-public class DataManager implements Data, DataFromLocal {
+class DataManager extends Data implements DataFromLocal {
     private static DataManager dataManager;
-
-    private DataManager() {
-
-    }
-
-    public static Data getInstance() {
-        if (dataManager == null) {
-            dataManager = new DataManager();
-        }
-        return dataManager;
-    }
-
-    @Override
-    public ArrayList<? extends Figure> getFigureData() {
-        return getDataFromLocal();
-    }
 
     @Override
     public ArrayList<? extends Figure> getDataFromLocal() {
         return Init.getInstance().getFigures();
+    }
+
+    @Override
+    public void getData() {
+        dataReady.onComplete(getDataFromLocal());
+    }
+
+    @Override
+    public Data getInstance(OnDataReady dataReady) {
+        if (dataManager == null) {
+            dataManager = new DataManager();
+        }
+        dataManager.dataReady = dataReady;
+        return dataManager;
     }
 }

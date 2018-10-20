@@ -1,9 +1,12 @@
 package com.omarsanchez.Data;
 
-import com.omarsanchez.Figuras.Figure;
+import com.omarsanchez.Data.interfaces.OnDataReady;
 
-import java.util.ArrayList;
+abstract class Data {
+    protected OnDataReady dataReady;
 
-public interface Data {
-    ArrayList<? extends Figure> getFigureData();
+    public abstract void getData();
+
+    public abstract Data getInstance(OnDataReady dataReady);
+
 }

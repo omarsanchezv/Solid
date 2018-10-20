@@ -8,7 +8,7 @@ import com.omarsanchez.Figuras.tipos.Triangle;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Init {
+class Init {
     private ArrayList<? extends Figure> figures;
     private static Init init;
     private Init() {

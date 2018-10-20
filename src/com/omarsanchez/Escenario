@@ -8,3 +8,5 @@ Sacamos la responsabilidad aritmetica
 3- Init?? Singles responsability?? arreglado y caso de uso que maneja abstracciones
 
 4- Interface segregation Data Module creando una interfaz equivocada
+
+5 El main no debe depender de una clase si no de una abstraccion asi que se genera el data provider
